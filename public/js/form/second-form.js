@@ -1,5 +1,10 @@
-export default class SecondFormView {
+import CustomElementsForm from '../utils/utils.js';
+
+let utils = new CustomElementsForm();
+
+export default class SecondForm {
   constructor() {
+    this.languages = [];
     this.DOMElements = {
       secondForm: document.getElementById('second-form'),
       foodList: document.getElementsByClassName('food-list'),
@@ -10,9 +15,69 @@ export default class SecondFormView {
       languagesFields: document.getElementsByClassName('languages-fields'),
       languageAddBtn: document.getElementsByClassName('language-add-btn'),
     };
+    this.init();
+  }
+
+  init() {
+    fetch('second-form.html', {
+      headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Accept': 'application/json',
+      },
+    })
+      .then(response => response.text())
+      .then(data => {
+        this.getFoodList();
+        this.getLanguageList();
+        this.DOMElements.secondForm.innerHTML = data;
+        this.initCustomElements();
+        this.initListeners();
+      });
+  }
+
+  getLanguageList() {
+    fetch('/languages')
+        .then(response => response.json())
+      .then((languages) => {
+        this.languages = languages;
+        this.renderLanguagesOptions(languages);
+      },
+    );
+  }
+
+  getFoodList() {
+    fetch('/foods')
+      .then(response => response.json())
+      .then((foods) => {
+        this.renderFoodOptions(foods);
+      },
+    );
+  }
+
+  initCustomElements() {
+    utils.initSelect(document.getElementById('languages-name-1'));
+    utils.initSelect(document.getElementById('languages-level-1'));
+    utils.initSelectFilter(document.getElementsByClassName('food')[0]);
+  }
+
+  initListeners() {
+    this.DOMElements.languageAddBtn[0].addEventListener('click', (event) => {
+        event.stopPropagation();
+        this.addLanguageForm();
+      },
+    );
   }
 
   addLanguageForm() {
+    const idsNewForm = this.renderLanguageForm();
+    this.renderLanguagesOptions(this.languages);
+
+    idsNewForm.forEach(id => {
+      utils.initSelect(document.getElementById(id));
+    });
+  }
+
+  renderLanguageForm() {
     const formList = this.DOMElements.languagesItem;
     const lastId = +formList[formList.length - 1].getAttribute('data-id') + 1;
     let elem = document.createElement('div');
