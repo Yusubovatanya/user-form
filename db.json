@@ -1,0 +1,56 @@
+{
+  "foods": [
+    {
+      "value": "1",
+      "name": "Українська"
+    },
+    {
+      "value": "2",
+      "name": "Французька"
+    },
+    {
+      "value": "3",
+      "name": "Італійська"
+    },
+    {
+      "value": "4",
+      "name": "Японська"
+    }
+  ],
+  "languages": [
+    {
+      "value": "uk",
+      "name": "Українська"
+    },
+    {
+      "value": "fr",
+      "name": "Французька"
+    },
+    {
+      "value": "it",
+      "name": "Італійська"
+    },
+    {
+      "value": "jp",
+      "name": "Японська"
+    },
+    {
+      "value": "en",
+      "name": "Англійська"
+    }
+  ],
+  "city": [
+    {
+      "name": "Київ",
+      "value": "Kyiv"
+    },
+    {
+      "name": "Харків",
+      "value": "Kharkiv"
+    },
+    {
+      "name": "Запоріжжя",
+      "value": "Zaporizhzhia"
+    }
+  ]
+}
