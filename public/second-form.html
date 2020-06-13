@@ -1,0 +1,102 @@
+<!--  step 2 -->
+  <h2 class="title-form">Про кухаря</h2>
+
+  <!-- food -->
+  <div class="food">
+    <label for="food" class="label-field">Які кухні готують
+      <p class="field-description">
+        Почніть заповнювати перші литери назви кухні яку Ви можете готувати і виберіть
+        потрібний пункт з випадаючого списку нижче.
+      </p>
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      id="food"
+      name="food"
+      placeholder="Почніть введити назву"
+      autocomplete="off"
+    >
+    <ul class="select-list hide food-list">
+      <!-- bind food-list -->
+    </ul>
+  </div>
+
+  <!-- languages -->
+  <div class="languages">
+    <label class="label-field">Мови
+      <p class="field-description">
+        Перелічіть іноземні мови, якими ви володіїте
+      </p></label>
+    <div class="languages-fields">
+      <div class="languages-item" data-id="1">
+
+        <!-- languages name -->
+        <div class="relative languages-name-block" id="languages-name-1">
+          <input
+            type="text"
+            class="form-control"
+            id="language-name-field-1"
+            name="language-1"
+            placeholder="Мови"
+            readonly
+          >
+          <ul class="language-name-list hide select-list customselect">
+          </ul>
+        </div>
+
+        <!-- languages level -->
+        <div class="relative" id="languages-level-1">
+          <div class="relative languages-level-block">
+            <input
+              type="text"
+              class="form-control"
+              id="language-level-field-1"
+              name="language-1"
+              placeholder="Рівень володіння"
+              readonly
+            >
+            <span class="select-level-btn">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </div>
+          <ul class="hide select-list customselect">
+            <li data-value="elementary">Елементарний</li>
+            <li data-value="intermediate">Незалежний</li>
+            <li data-value="advanced">Досвідчений</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="language-add-btn">
+      <span class="languages-add-icon"><i class="fal fa-plus"></i></span>
+    </button>
+  </div>
+
+  <!-- awards -->
+  <div class="awards">
+    <label for="awards-field" class="label-field">Нагороды
+      <p class="field-description">
+        Перелічить свої нагороді через кому у полі нижче
+      </p>
+    </label>
+    <textarea
+      class="form-control"
+      id="awards-field"
+      name="awards"
+      placeholder="...Chef Award 2017, Global Chef Award"
+    ></textarea>
+  </div>
+
+  <!--  about yourself-->
+  <div class="about">
+    <label for="about-field" class="label-field">Про себе</label>
+    <textarea
+      class="form-control"
+      id="about-field"
+      name="about"
+      placeholder="Напишіть декілька речень про себе"
+    ></textarea>
+  </div>
+

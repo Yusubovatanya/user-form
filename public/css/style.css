@@ -1,0 +1,494 @@
+body {
+  font-size: 16px;
+  color: #222;
+  font-family: 'Open Sans', sans-serif;
+  background: #e5e5e5;
+}
+
+button, input, textarea {
+  outline: none;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button:hover,
+button:focus {
+  background-color: #ffc000;
+  color: #fff;
+}
+
+button:active {
+  background-color: #fff;
+  color: #222;
+}
+
+button:hover i,
+button:focus i {
+  color: #fff;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ccc;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 174, 255, 0.04) 50%, rgba(255, 255, 255, 0) 51%, rgba(0, 174, 255, 0.03) 100%);
+}
+
+ul {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+::placeholder {
+  font-weight: 300;
+}
+
+.relative {
+  position: relative;
+}
+
+.hide {
+  display: none !important;
+}
+
+.wrapper {
+  background-color: #fff;
+  max-width: 558px;
+  margin: 0 auto;
+  border: 2px solid #e5e5e5;
+  border-radius: 5px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+  padding: 44px 0 38px;
+}
+
+/*progressbar*/
+.progressbar {
+  margin: 0 auto 30px;
+  overflow: hidden;
+  counter-reset: step;
+  width: 264px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.progressbar li {
+  list-style-type: none;
+  text-transform: uppercase;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+
+.progressbar li::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 48px;
+  line-height: 48px;
+  display: block;
+  font-size: 20px;
+  border: 2px solid #e5e5e5;
+  background: white;
+  border-radius: 5px;
+  margin: 0 auto 5px auto;
+  color: #222;
+  text-align: center;
+}
+
+.progressbar li::after {
+  content: '';
+  width: 36px;
+  height: 2px;
+  background: #e5e5e5;
+  position: absolute;
+  top: 24px;
+  left: calc(-50% + 26px);
+}
+
+.progressbar li:first-child:after {
+  content: none;
+}
+
+.progressbar li.active::before {
+  border: 2px solid #ffc000;
+}
+
+.progressbar li.active::after {
+  background-color: #ffc000;
+}
+
+.progressbar li.active .done.mark-step {
+  height: 48px;
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 48px;
+  color: #ffc000;
+  border-radius: 5px;
+}
+
+.progressbar li.active .done.mark-step i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* form */
+.form-step {
+  margin: 0 auto;
+  width: 361px;
+}
+
+.title-form {
+  text-align: center;
+  margin-top: 0;
+}
+
+.form-control {
+  height: 49px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin-bottom: 22px;
+  width: 100%;
+  display: inline-block;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.form-control::placeholder {
+  color: #bfbfbf;
+}
+
+.form-control:disabled,
+.form-control option:disabled {
+  color: #bfbfbf;
+}
+
+.form-control:hover,
+.form-control:focus {
+  border: 1px solid #ffc000;
+}
+
+.label-field {
+  padding-left: 26px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* step 2 */
+
+/* city block */
+.city-block {
+  position: relative;
+}
+
+.city-block .select-list {
+  margin-top: -22px;
+}
+
+.city-block .form-control {
+  appearance: unset;
+  -moz-appearance: unset;
+  -webkit-appearance: unset;
+  -o-appearance: unset;
+  -ms-appearance: unset;
+  z-index: 1;
+  background: 0 0;
+  position: relative;
+}
+
+.city-block .form-control option {
+  padding: 10px;
+}
+
+.select-city-btn {
+  z-index: 0;
+  position: absolute;
+  top: 48%;
+  right: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ffc000;
+}
+
+/* password block */
+.password-field {
+  font-size: 24px;
+  letter-spacing: 4px;
+  color: #bfbfbf;
+}
+
+.password-field:focus {
+  color: #222;
+}
+
+#phone::placeholder, #phone {
+  letter-spacing: 2px;
+}
+
+/* form action button */
+.action-btn {
+  border: 1px solid #ffc000;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  display: block;
+  text-decoration: none;
+  color: #222;
+  cursor: pointer;
+}
+
+.next-step {
+  padding: 15px;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.next-step .btn-text {
+  margin-right: 16px;
+}
+
+/* step 2 */
+
+/* food block */
+.food {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.field-description {
+  color: #a6a6a6;
+  font-size: 14px;
+  padding-top: 12px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.food input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.select-list {
+  position: absolute;
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #fff;
+  z-index: 2;
+  margin: 0;
+}
+
+.select-list li {
+  padding: 14px 20px;
+  font-size: 16px;
+}
+
+.select-list li:hover,
+.select-list li:focus {
+  background-color: #ffc000;
+  color: #fff;
+}
+
+.food .form-control {
+  margin-bottom: 0;
+}
+
+/* languages block */
+.languages {
+  position: relative;
+}
+
+.languages-name-block .form-control {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.languages-level-block .form-control {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.languages-item {
+  display: flex;
+  margin-bottom: 22px;
+}
+
+.select-level-btn {
+  z-index: 0;
+  position: absolute;
+  top: 35%;
+  right: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #222;
+  z-index: 0;
+}
+
+.languages .form-control {
+  margin-bottom: 0;
+}
+
+.language-add-btn {
+  width: 39px;
+  height: 39px;
+  border: 1px solid #ffc000;
+  background-color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 5px;
+  right: -55px;
+}
+
+.languages-add-icon {
+  font-size: 26px;
+  color: #ffc000;
+}
+
+/* about block */
+.about .form-control {
+  height: 119px;
+}
+
+.actions {
+  display: flex;
+}
+
+.previous {
+  padding: 18px;
+  margin-right: auto;
+  width: 165px;
+}
+
+.previous .btn-text {
+  margin-left: 16px;
+}
+
+.next {
+  padding: 18px;
+  width: 165px;
+}
+
+.next .btn-text {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+/* education block */
+.educational-experience-block {
+  margin-bottom: 30px;
+}
+
+.period .field-description {
+  padding: 0;
+}
+
+.period .form-control {
+  max-width: 175px;
+}
+
+.period-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-icon {
+  background: url('../img/calendar-icon.svg');
+  width: 14px;
+  height: 16px;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.date-placeholder {
+  display: flex;
+  position: absolute;
+  margin-top: 16px;
+  margin-left: 24px;
+}
+
+.period-fields > div {
+  cursor: pointer;
+}
+
+.period-fields > div:hover .form-control,
+.period-fields > div:focus .form-control {
+  border: 1px solid #ffc000;
+}
+
+.about-education-field,
+.about-experience-field {
+  min-height: 119px;
+}
+
+.add-education-btn,
+.add-experience-btn {
+  padding: 14px 0;
+  border: 1px solid #ffc000;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.add-education-icon,
+.add-experience-icon {
+  display: inline-block;
+  margin-right: 10px;
+  color: #ffc000;
+}
+
+/* divider */
+.divider {
+  height: 2px;
+  background-color: #e5e5e5;
+  margin: 30px 0;
+}
+
+/* errors */
+.warn {
+  border-color: #ff1e00;
+}
+
+.error-msg {
+  color: #ff1e00;
+  font-size: 10px;
+  padding: 0;
+  margin: -18px 0 0 5px;
+  position: absolute;
+}
+
+.form-control .warn:hover,
+.form-control .warn:focus {
+  border: 1px solid #ff1e00;
+}

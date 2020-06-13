@@ -1,0 +1,79 @@
+<h2 class="title-form">Основна інформація</h2>
+
+<!-- first name-->
+<label for="first-name" class="label-field">Ім'я</label>
+<input
+  type="text"
+  class="form-control"
+  id="first-name"
+  name="firstName"
+  placeholder="Константин"
+>
+<!-- last name -->
+<label for="last-name" class="label-field">Прізвище</label>
+<input
+  type="text"
+  class="form-control"
+  id="last-name"
+  name="lastName"
+  placeholder="Константинопольський"
+>
+
+<!-- city -->
+<div class="city-block">
+  <label for="city-field" class="label-field">Місто</label>
+  <input
+    type="text"
+    class="form-control"
+    id="city-field"
+    name="city"
+    placeholder="Вибиріть своє місто"
+    autocomplete="off"
+    spellcheck="off"
+  >
+  <span class="select-city-btn">
+    <i class="fas fa-chevron-down"></i>
+  </span>
+  <ul class="select-list hide customselect select-city">
+    <!-- bind city-list -->
+  </ul>
+</div>
+
+<!-- email -->
+<label for="email" class="label-field">Електронная пошта</label>
+<input
+  type="email"
+  class="form-control"
+  id="email"
+  name="email"
+  placeholder="example@gmail.com"
+  autocomplete="off"
+>
+
+<label for="phone" class="label-field">Номер телефону</label>
+<input
+  type="tel"
+  class="form-control"
+  id="phone"
+  name="phone"
+  placeholder="+38 (___) ___-__-__"
+>
+
+<label for="password" class="label-field">Вигадайте пароль</label>
+<input
+  type="password"
+  class="form-control password-field"
+  id="password"
+  name="password"
+  placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
+>
+
+<label for="password-confirm" class="label-field">Повторіть пароль</label>
+<input
+  type="password"
+  class="form-control password-field"
+  id="password-confirm"
+  name="passwordConfirm"
+  placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
+  autocomplete="off"
+>
